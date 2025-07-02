@@ -42,6 +42,7 @@ const App = () => {
 
     // Handle user search by name or ingredient
     const handleSearch = async (query) => {
+        if (!query || query.trim() === "") return;
         const results = await searchDrinksByName(query);
         setDrinks(results);
         setSelectedDrink(null);
